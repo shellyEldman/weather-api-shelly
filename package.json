@@ -1,0 +1,19 @@
+{
+  "name": "weather-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --exec ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cachejs": "^0.1.24",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.8"
+  }
+}
