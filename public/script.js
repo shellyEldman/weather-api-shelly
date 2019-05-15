@@ -49,8 +49,7 @@ function handleClick(cityName) {  // handle button/marker click
 function checkCache(cityName) {  // check if there is available data in the cache
     const cache = cacheJS.get({ city: cityName });
     if (cache !== null) {
-        // if (Date.now() > cache.time + 1000 * 60 * 60 * 1) {  // check if 1 hour passed
-        if (Date.now() > cache.time + 1000) {  // check if 1 hour passed
+        if (Date.now() > cache.time + 1000 * 60 * 60 * 1) {  // check if 1 hour passed
             return null;
         } else {
             return cache;
@@ -86,8 +85,6 @@ function setMapView(cityData) {  // display current selected city on the map
 }
 
 function handleData(data, cityName, country) {  // update weather table data
-    console.log('data', data);
-    console.log('wind:', data.wind);
     const windDeg = data.wind.deg ? `, degrees: ${data.wind.deg}` : '';
     document.querySelector('.dropdown-toggle').textContent = cityName;
     document.querySelector('.cityName').textContent = cityName + ', ' + country;
